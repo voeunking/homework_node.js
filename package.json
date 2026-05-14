@@ -1,28 +1,28 @@
 {
-  "name": "homework_node",
+  "name": "user-management",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/server.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "build": "tsc",
+    "check": "tsc --noEmit",
+    "dev": "nodemon --watch src --ext ts --exec \"npm run build && node dist/server.js\"",
+    "start": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/voeunking/homework_node.js.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
-  "bugs": {
-    "url": "https://github.com/voeunking/homework_node.js/issues"
-  },
-  "homepage": "https://github.com/voeunking/homework_node.js#readme",
   "dependencies": {
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "nodemon": "^3.1.14",
-    "router": "^2.2.0"
+    "mysql2": "^3.22.3",
+    "nodemon": "^3.1.14"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.6.2",
+    "typescript": "^6.0.3"
   }
 }
